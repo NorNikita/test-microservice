@@ -1,0 +1,17 @@
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: test-service
+  profiles:
+    active: local
+---
+spring:
+  profiles: local
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      config:
+        data-key: config
+        format: yaml

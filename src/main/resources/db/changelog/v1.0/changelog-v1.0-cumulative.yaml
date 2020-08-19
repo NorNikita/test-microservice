@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+          file: /db/changelog/v1.0/01--05.03.2020-create-table-test.xml
+  - include:
+          file: /db/changelog/v1.0/02--10.03.2020-create-table-test_plan.xml

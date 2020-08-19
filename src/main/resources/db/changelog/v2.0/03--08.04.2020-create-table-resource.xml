@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="3" author="nikita_nor">
+        <createTable tableName="resource">
+            <column name="id" autoIncrement="true" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(30)"/>
+            <column name="server_id" type="varchar(30)"/>
+            <column name="location" type="varchar(30)"/>
+            <column name="host" type="varchar(20)"/>
+            <column name="port" type="int"/>
+            <column name="priority" type="bigint"/>
+            <column name="max_user_count" type="bigint"/>
+            <column name="for_free" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: /db/changelog/v2.0/03--08.04.2020-create-table-resource.xml
+  - include:
+      file: /db/changelog/v2.0/04--08.04.2020-create-table-used_resource.xml

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="5" author="nikita_nor">
+        <createTable tableName="used_resource">
+            <column name="id" autoIncrement="true" type="bigint">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="container_id" type="varchar(100)"/>
+            <column name="server_id" type="varchar(30)"/>
+            <column name="count_users" type="bigint"/>
+            <column name="state" type="varchar(10)"/>
+            <column name="number_test" type="bigint"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="6" author="nikita_nor">
+        <addForeignKeyConstraint
+                baseTableName="used_resource"
+                baseColumnNames="number_test"
+                referencedTableName="test"
+                referencedColumnNames="test_id"
+                constraintName="fk_test_id"
+                deleteCascade="true"
+        />
+    </changeSet>
+</databaseChangeLog>
